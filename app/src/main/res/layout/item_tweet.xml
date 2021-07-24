@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="5dp">
 
     <ImageView
         android:id="@+id/ivProfileImage"
@@ -35,5 +36,16 @@
         android:layout_marginTop="2dp"
         android:layout_toEndOf="@+id/ivProfileImage"
         android:text="Sample_Tweet"
+        android:textSize="8sp" />
+
+    <TextView
+        android:id="@+id/tvTimeStamp"
+        android:layout_width="32dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="279dp"
+        android:layout_toEndOf="@+id/tvScreenName"
+        android:text="2hr"
         android:textSize="8sp" />
 </RelativeLayout>

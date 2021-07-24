@@ -19,6 +19,10 @@ import java.util.List;
 
 public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder> {
 
+    ImageView ivProfileImage;
+    TextView tvBody;
+    TextView tvScreenName;
+    TextView tvTimestamp;
     Context context;
     List<Tweet> tweets;
 
@@ -46,8 +50,12 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
     public void onBindViewHolder(@NonNull @NotNull ViewHolder holder, int position) {
         // Get the data at position
         Tweet tweet = tweets.get(position);
+
+        // Getting the timestamp for the tweet.
+        tvTimestamp.setText(tweet.getFormattedTimestamp());
         // Bind the tweet with view holder
         holder.bind(tweet);
+
     }
 
     @Override
@@ -70,21 +78,22 @@ public class TweetsAdapter extends RecyclerView.Adapter<TweetsAdapter.ViewHolder
 
     // Define Viewholder
     public class ViewHolder extends RecyclerView.ViewHolder{
-        ImageView ivProfileImage;
-        TextView tvBody;
-        TextView tvScreenName;
+
 
         public ViewHolder(@NonNull @NotNull View itemView) {
             super(itemView);
             ivProfileImage = itemView.findViewById(R.id.ivProfileImage);
             tvBody = itemView.findViewById(R.id.tvBody);
             tvScreenName = itemView.findViewById(R.id.tvScreenName);
+            tvTimestamp = itemView.findViewById(R.id.tvTimeStamp);
+
         }
 
         public void bind(Tweet tweet) {
             tvBody.setText(tweet.body);
             tvScreenName.setText(tweet.user.screenName);
             Glide.with(context).load(tweet.user.profileImageUrl).into(ivProfileImage);
+
         }
     }
 }
