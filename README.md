@@ -29,7 +29,7 @@ The following **optional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='SimpleTweet.gif'/>
+<img src="SimpleTweet.gif" width=250><br>
 
 
 ## Notes
