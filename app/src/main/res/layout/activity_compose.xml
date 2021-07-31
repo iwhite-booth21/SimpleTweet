@@ -5,6 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    app:counterEnabled="true"
+    app:counterMaxLength="280"
     tools:context=".ComposeActivity">
 
     <EditText
@@ -30,4 +32,5 @@
         android:layout_marginTop="5dp"
         android:layout_marginEnd="5dp"
         android:text="@string/tweet" />
+
 </RelativeLayout>
