@@ -114,6 +114,7 @@ public class TimelineActivity extends AppCompatActivity {
                 Log.i(TAG, "onSuccess!" + json.toString());
                 JSONArray jsonArray = json.jsonArray;
                 try {
+                    Log.i(TAG,jsonArray.toString());
                     adapter.clear();
                     adapter.addAll(Tweet.fromJsonArray(jsonArray));
                     Log.i(TAG,"Tweets.addAll and adapter update Succeeded!");
